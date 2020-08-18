@@ -10,17 +10,18 @@ class Details extends Component{
         movie:null
     }
 
-    fetchMovieData = ()=>{
+    fetchMovieData = async ()=>{
         const {match, api_key} = this.props;
-        fetch(`http://www.omdbapi.com/?apikey=${api_key}&i=${match.params.id}`)
-        .then((response)=>response.json())
-        .then((response)=>{
+
+        try{
+            const request = await fetch(`http://www.omdbapi.com/?apikey=${api_key}&i=${match.params.id}`)
+            const response = await request.json()
             if(response.Response.trim()==="True"){
                 this.setState({movie:response});
             }
-            console.log(response);
-        }).catch((error)=>{console.log(error)})
-
+        }catch(error){
+            console.log(error);
+        }
     }
 
     componentDidMount(){

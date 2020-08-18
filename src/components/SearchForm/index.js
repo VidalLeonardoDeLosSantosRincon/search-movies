@@ -26,20 +26,25 @@ const SearchForm = ({setData, page, resetPages, setTotalPages, api_key})=>{
         setTotalPages(_totalPages);
     }
 
-    function fetchMovieData (){
+    async function fetchMovieData (){
         if(inputMovie.trim()!==""){
             resetPages();
             _page = 1;
 
-            fetch(`${url_movie}${_page}`)
-            .then((response)=>response.json())
-            .then((response)=>{
+            try{
+                const request = await fetch(`${url_movie}${_page}`);
+                const response = await request.json();
+                console.log(response);
+
                 if(response.Response.trim()==="True"){
                     calculateTotalPages((response.totalResults)*1);
                     setData({...response, url_movie});
                 }
+                
+            }catch(error){
+                console.log(error);
+            }
 
-            }).catch((error)=>{console.log("Error: ",error)});
         }
     }
 

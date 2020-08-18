@@ -29,21 +29,21 @@ const Pagination = (props)=>{
         setTotalPages(_totalPages);
     }
 
-    function fetchMovieData (){
-        fetch(`${url_movie}${page}`)
-        .then((response)=>response.json())
-        .then((response)=>{
+    async function fetchMovieData (){
+        
+        try{
+            const request = await fetch(`${url_movie}${page}`)
+            const response = await request.json()
+        
             if(response.Response.trim()==="True"){
                 calculateTotalPages((response.totalResults)*1);
                 setData({...response, url_movie});
                 _setPagination_(false);
-            
             }
-
-        }).catch((error)=>{console.log("Error: ",error)});
-    
+        }catch(error){
+            console.log(error);
+        }
     }
-
 
     const setPrevPage =()=>{
         prevPage();
