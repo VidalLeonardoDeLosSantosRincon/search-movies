@@ -1,0 +1,107 @@
+
+.ctr-home{
+    background: white;
+    width:100%;
+    box-sizing: border-box;
+    padding-bottom:10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ctr-home .ctr-movie{
+    background: white;
+    width:80%;
+    padding:5px;
+    box-sizing: border-box;
+  
+    
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+.ctr-home .ctr-movie .movie-box{
+    background: white;
+    border-radius: 20px;
+    border:0.5px solid rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin:5px;
+    width: 230px;
+    height:280px;
+    cursor: pointer;
+    filter:saturate(0.8);
+  
+    
+  }
+  
+.ctr-home .ctr-movie .movie-box:hover{
+    transform: scale(1.1);
+    transition: all 0.2s linear;
+    z-index:1000;
+    box-shadow: 10px 20px 30px rgba(0,0,0,0.4);
+    filter:saturate(2);
+  }
+  
+  /*.ctr-home .movie-box div:nth-child(odd):hover{
+    transform: translateX(-250px) rotateZ(-70deg);
+    box-shadow: 10px 10px 100px 10px rgba(0,0,0,0.4);
+    transition: all 0.8s linear;
+    
+  }
+  
+  .ctr-home .movie-box div:nth-child(even):hover{
+    transform: translateX(250px) rotateZ(70deg);
+    box-shadow: 10px 10px 100px 10px rgba(0,0,0,0.4);
+    transition: all 0.8s linear;
+    
+  }*/
+  
+  .ctr-home .ctr-movie .movie-box .movie-box-picture{
+    background: white;
+    padding:5px;
+    box-sizing: border-box;
+    height:65%;
+    overflow: hidden;
+  }
+  .ctr-home .ctr-movie .movie-box .movie-box-picture img{
+    height:100%;
+    width:100%;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .ctr-home .ctr-movie .movie-box .movie-box-info{
+    background: white;
+    height:35%;
+    box-sizing: border-box;
+    padding:10px 20px;
+  
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+  }
+  
+  .ctr-home .ctr-movie .movie-box .movie-box-info p{
+    background: white;
+    font-weight: 300;
+    font-size:16px;
+    height:40%;
+  }
+  
+  .ctr-home .ctr-movie .movie-box .movie-box-info a{
+   /* background: white;
+    color:lightseagreen;
+    border:1px solid lightseagreen;*/
+    font-weight: 300;
+    font-size:12px;
+    border-radius: 50px;
+    padding:1px 25px;
+    box-sizing: border-box;
+  
+  }

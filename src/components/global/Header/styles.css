@@ -1,0 +1,25 @@
+.header{
+    height:60px;
+    width:100%;
+    color:gray;
+    background: rgba(0,0,0,0.05);
+    box-sizing:border-box;
+    padding:5px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header h4{
+    font-size:25px;
+    font-weight: 300;
+    color:lightseagreen;
+}
+
+
+@media screen and (max-width:850px){
+    .navbar-menu{
+        margin-top:140px;
+    }
+}

@@ -1,0 +1,16 @@
+.ctr-title{
+    height:80px;
+    background: white;
+    margin:5px 0;
+    box-sizing: border-box;
+    padding:5px 25px;
+    width:80%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.ctr-title .title{
+    font-weight: 300;
+}
