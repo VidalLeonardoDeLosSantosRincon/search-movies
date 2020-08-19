@@ -26,7 +26,7 @@ class Details extends Component{
     }
 
     componentDidMount(){
-        this.setState((state)=>({...state,loading:true}));
+        this.setState({...this.state, loading:true});
         this.fetchMovieData();
     }
 
