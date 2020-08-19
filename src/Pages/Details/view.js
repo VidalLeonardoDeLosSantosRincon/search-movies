@@ -20,7 +20,18 @@ export default function(props){
                                 <h4 className="title is-medium">{movie.Title==="N/A"? "UNKNOWN" : movie.Title}</h4>
                                 <p>{movie.Plot==="N/A"? "No description" : movie.Plot}</p>
                                 <span className="button is-primary is-small is-light">Director: {movie.Director==="N/A"? "UNKNOWN" : movie.Director}</span>
-                                <span className="button is-primary is-small is-light">Actors: {movie.Actors==="N/A"? "UNKNOWN" : movie.Actors}</span>
+                                <p className="" style={
+                                    {
+                                        wordWrap:" break-word", 
+                                        textAlign:"left",
+                                        width:"100%", 
+                                        backgroundColor:"rgba(0,220,200,0.1)", 
+                                        color:"gray",
+                                        padding:"5px 10px",
+                                        borderRadius:"3px"
+                                    }
+                                    
+                                    }>Actors: {movie.Actors==="N/A"? "UNKNOWN" : movie.Actors}</p>
                                 <span className="button is-primary is-small is-light">Type: {movie.Type==="N/A"? "UNKNOWN" : movie.Type}</span>
                                 <span className="button is-primary is-small is-light">Country: {movie.Country==="N/A"? "UNKNOWN" : movie.Country}</span>
                                 <span className="button is-primary is-small is-light">Language: {movie.Language==="N/A"? "UNKNOWN" : movie.Language}</span>
