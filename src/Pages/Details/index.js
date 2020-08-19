@@ -7,7 +7,8 @@ import View from './view'
 class Details extends Component{
 
     state = {
-        movie:null
+        movie:null,
+        loading:false
     }
 
     fetchMovieData = async ()=>{
@@ -17,7 +18,7 @@ class Details extends Component{
             const request = await fetch(`http://www.omdbapi.com/?apikey=${api_key}&i=${match.params.id}`)
             const response = await request.json()
             if(response.Response.trim()==="True"){
-                this.setState({movie:response});
+                this.setState({movie:response, loading:false});
             }
         }catch(error){
             console.log(error);
@@ -25,6 +26,7 @@ class Details extends Component{
     }
 
     componentDidMount(){
+        this.setState((state)=>({...state,loading:true}));
         this.fetchMovieData();
     }
 
