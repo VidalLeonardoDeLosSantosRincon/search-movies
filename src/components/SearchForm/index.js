@@ -8,6 +8,7 @@ const SearchForm = ({setData, page, resetPages, setTotalPages, api_key})=>{
     
     const API_KEY = api_key;
     const [inputMovie, setInputMovie] = useState("");
+    const [loading, setLoading] = useState(false);
     let url_movie = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}&page=`;
     let _page = page;
 
@@ -38,6 +39,7 @@ const SearchForm = ({setData, page, resetPages, setTotalPages, api_key})=>{
 
                 if(response.Response.trim()==="True"){
                     calculateTotalPages((response.totalResults)*1);
+                    setLoading(false);
                     setData({...response, url_movie});
                 }
                 
@@ -49,13 +51,15 @@ const SearchForm = ({setData, page, resetPages, setTotalPages, api_key})=>{
     }
 
     const handleSubmit = (e)=>{
+        
         e.preventDefault();
+        setLoading(true);
         fetchMovieData();   
     }
 
     return(
         <Fragment>
-            <View movie={inputMovie} onChange={handleChangeInputMovie} onSubmit={handleSubmit}/>
+            <View movie={inputMovie} onChange={handleChangeInputMovie} onSubmit={handleSubmit} loading={loading}/>
         </Fragment>
     );
 }
